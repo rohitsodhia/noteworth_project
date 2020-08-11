@@ -3,6 +3,11 @@
 {% block title %}Landing{% endblock %}
 
 {% block content %}
+{% if last_token %}
+<p>The last token was created on {{ last_token }}</p>
+{% endif %}
 <p>Get a <a href="/authtokens">new auth token</a>.</p>
+{% if last_token %}
 <p>View <a href="/providers">all providers</a>.</p>
+{% endif %}
 {% endblock %}
