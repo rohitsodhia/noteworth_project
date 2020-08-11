@@ -3,5 +3,5 @@ from django.shortcuts import render
 
 # Create your views here.
 def landing(request):
-    return HttpResponse("test")
+    return render(request, "landing.html", {})
 
