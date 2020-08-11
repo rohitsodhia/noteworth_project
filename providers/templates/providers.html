@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Providers{% endblock %}
+
+{% block content %}
+{% if no_auth_token %}
+<p>No auth token was found. Please <a href="/authtokens">create one</a>.</p>
+{% endif %}
+{% if request_failed or invalid_json %}
+<p>It looks like there was a problem getting the providers. Please <a href="/providers">refresh</a> to try again.</p>
+{% endif %}
+{% if providers %}
+<h1>Providers</h1>
+{% for provider in providers %}
+<p>{{provider.title}} {{provider.name_given}} {{provider.name_family}} of {{provider.clinic}}</p>
+{% endfor %}
+{% endif %}
+{% endblock %}

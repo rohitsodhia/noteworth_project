@@ -1,6 +1,7 @@
 import requests
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
+from hashlib import sha256
 
 
 def requests_retry_session(
@@ -18,3 +19,7 @@ def requests_retry_session(
     session.mount("http://", adapter)
     session.mount("https://", adapter)
     return session
+
+
+def generate_auth_header(token, path):
+    return {"X-Request-Checksum": sha256(f"{token}/{path}".encode("utf-8")).hexdigest()}
