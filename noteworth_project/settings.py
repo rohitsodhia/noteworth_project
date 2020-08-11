@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     "authtokens.apps.AuthTokensConfig",
     "providers.apps.ProvidersConfig",
+    "landing.apps.LandingConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
