@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Auth Token{% endblock %}
+
+{% block content %}
+{% if request_failed %}
+<p>Looks like we were unable to get a new auth token. <a href="">Try again</a>.</p>
+{% else %}
+<p>New token sucessfully generated!</p>
+{% endif %}
+<p><a href="/">Back</a></p>
+{% endblock %}
